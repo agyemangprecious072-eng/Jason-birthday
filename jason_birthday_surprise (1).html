@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Jason! 💙</title>
+<style>
+:root{--blue:#1456a0;--deep:#092b55;--sky:#dff1ff;--ice:#f5fbff;--gold:#ffd778}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--deep);background:linear-gradient(145deg,#eaf7ff,#c9e6ff 55%,#f7fbff);min-height:100vh;overflow-x:hidden}
+main{width:min(760px,92%);margin:34px auto;padding:24px 0 50px;text-align:center}
+.card{background:rgba(255,255,255,.86);border:1px solid rgba(255,255,255,.9);border-radius:28px;padding:clamp(24px,6vw,48px);box-shadow:0 18px 55px rgba(14,67,119,.14)}
+.tag{display:inline-block;background:#e5f3ff;color:#1c65aa;border-radius:99px;padding:8px 15px;font-size:.78rem;letter-spacing:2px;font-weight:bold}
+h1{font-size:clamp(2.5rem,9vw,5rem);line-height:.98;margin:22px 0 12px;color:#0c4c91}
+.name{color:#2684d8}
+.sub{font-size:1.08rem;line-height:1.7;color:#426482;max-width:520px;margin:0 auto}
+.ball{font-size:4rem;margin:22px 0 8px;filter:drop-shadow(0 8px 10px #a8d4f2)}
+button{border:0;border-radius:99px;padding:14px 23px;background:#125ba5;color:white;font-weight:bold;font-size:1rem;cursor:pointer;box-shadow:0 8px 18px #9bc9ed;margin:10px 6px;transition:.2s}
+button:hover{transform:translateY(-2px);background:#0b4078}
+.secondary{background:#e7f4ff;color:#15518b;box-shadow:none;border:1px solid #c5e3fb}
+section{margin-top:22px;background:#f4faff;border-radius:20px;padding:22px}
+section h2{margin:0 0 10px;color:#1456a0}
+section p{line-height:1.7;color:#46647f;margin:0}
+.interests{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:16px}
+.chip{background:#e2f2ff;color:#1456a0;border-radius:99px;padding:9px 13px;font-size:.9rem;font-weight:bold}
+#surprise{display:none;margin-top:18px;background:#fff7df;border:1px solid #ffe4a1;border-radius:18px;padding:20px;line-height:1.7;color:#634b19}
+footer{margin-top:20px;color:#52718e;font-size:.85rem}
+.confetti{position:fixed;top:-20px;pointer-events:none;animation:fall linear forwards;z-index:5}
+@keyframes fall{to{transform:translateY(110vh) rotate(650deg);opacity:.1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<div class="card">
+  <span class="tag">A LITTLE BIRTHDAY SURPRISE</span>
+  <div class="ball">⚽</div>
+  <h1>HAPPY<br><span class="name">BIRTHDAY, JASON!</span></h1>
+  <p class="sub">Today is your day! Hope it brings you big smiles, good music, great memories and all the happiness you deserve. 💙</p>
+  <div class="interests">
+    <span class="chip">💙 Team Blue</span>
+    <span class="chip">🔵🔴 Barça vibes</span>
+    <span class="chip">🎧 Asake on repeat</span>
+    <span class="chip">⚽ Football fan</span>
+    <span class="chip">🌟 Lamine Yamal energy</span>
+  </div>
+  <section>
+    <h2>Dear Jason,</h2>
+    <p>Wishing you another amazing year filled with laughter, exciting opportunities, answered prayers and moments worth remembering. Keep being yourself, keep chasing what makes you happy, and never stop enjoying the things you love. May this new chapter be a beautiful one!</p>
+  </section>
+  <button onclick="reveal()">🎁 Open your birthday surprise</button>
+  <div id="surprise">🥳 Surprise! Here's to more wins on and off the pitch, playlists that never miss, and a year that treats you brilliantly. Have the best birthday, Jason! 💙</div>
+  <p style="margin-top:24px;color:#6b8aa7">Make a wish… and enjoy your day! ✨</p>
+</div>
+<footer>Made with 💙 just for Jason</footer>
+</main>
+<script>
+function reveal(){
+ const box=document.getElementById('surprise');
+ box.style.display='block';
+ box.scrollIntoView({behavior:'smooth',block:'nearest'});
+ for(let i=0;i<42;i++){
+  const el=document.createElement('span');el.className='confetti';
+  el.textContent=['💙','✨','🎉','⭐','⚽'][Math.floor(Math.random()*5)];
+  el.style.left=Math.random()*100+'vw';
+  el.style.animationDuration=(2+Math.random()*3)+'s';
+  el.style.fontSize=(14+Math.random()*18)+'px';
+  document.body.appendChild(el);setTimeout(()=>el.remove(),5200);
+ }
+}
+</script>
+</body>
+</html>
